@@ -1,27 +1,19 @@
-package br.com.application.api.entity;
+package br.com.application.api.dto;
 
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "users")
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class User implements Serializable {
+public class UserDTO {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column
     private String name;
-    @Column
     private String login;
-    @Column
     private String password;
 
 }
