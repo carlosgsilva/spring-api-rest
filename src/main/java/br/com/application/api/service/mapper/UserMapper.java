@@ -43,6 +43,5 @@ public class UserMapper {
                 userPage.stream()
                 .map(this::userToUserDTO)
                 .collect(Collectors.toList()), pageable, total);
-        );
     }
 }
