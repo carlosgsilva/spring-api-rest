@@ -1,4 +1,4 @@
-package br.com.application.api.util;
+package br.com.application.api.constant;
 
 public class JWTConstants {
 

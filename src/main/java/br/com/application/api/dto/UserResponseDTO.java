@@ -6,11 +6,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class UserDTO {
+public class UserResponseDTO {
 
-    private Long id;
-    private String name;
     private String login;
-    private String password;
+    private String token;
 
 }

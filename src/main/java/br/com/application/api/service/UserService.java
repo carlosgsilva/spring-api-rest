@@ -8,15 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
 
     @Autowired
     UserRepository userRepository;
-
     @Autowired
     UserMapper userMapper;
 
@@ -31,15 +29,21 @@ public class UserService {
     public UserDTO save(UserDTO userDTO) {
         User user = userMapper.userDTOToUser(userDTO);
         user = userRepository.save(user);
+
         return userMapper.userToUserDTO(user);
     }
 
     public UserDTO byId(Long id) {
-        User user = userRepository.getById(id);
+        User user = userRepository.getOne(id);
         return userMapper.userToUserDTO(user);
     }
 
     public void delete(Long id) {
         userRepository.deleteById(id);
+    }
+
+    public UserDTO byLogin(String name) {
+        User user = userRepository.findByLogin(name);
+        return userMapper.userToUserDTO(user);
     }
 }

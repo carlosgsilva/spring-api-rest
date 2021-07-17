@@ -41,7 +41,8 @@ public class UserMapper {
     public Page<UserDTO> userPageToUserDTOPage(Page<User> userPage, Pageable pageable, int total) {
         return new PageImpl<UserDTO>(
                 userPage.stream()
-                .map(this::userToUserDTO)
-                .collect(Collectors.toList()), pageable, total);
+                        .map(this::userToUserDTO)
+                        .collect(Collectors.toList()), pageable, total);
     }
+
 }

@@ -1,6 +1,11 @@
-  spring:
-    datasource:
-      url: jdbc:postgresql://localhost:5432/spring-api
-      username: postgres
-      password: postgres
-      driverClassName: org.postgresql.Driver
+spring.jpa:
+  database: POSTGRESQL
+  hibernate.ddl-auto: update
+  show-sql: true
+
+spring.datasource:
+  platform: postgres
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/spring-api
+  username: postgres
+  password: postgres
